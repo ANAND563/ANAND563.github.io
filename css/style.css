@@ -13,12 +13,17 @@
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+}
+
 body {
     background-color: var(--bg-dark);
     color: var(--text-main);
     font-family: 'Inter', sans-serif;
     line-height: 1.7;
-    overflow-x: hidden;
 }
 
 .text-muted {
@@ -202,6 +207,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Section Styling */
 .section-padding {
     padding: 140px 0;
+    overflow: hidden; /* Prevent AOS animations from causing horizontal scroll */
 }
 .section-title {
     font-size: 2.5rem;
@@ -271,9 +277,13 @@ h1, h2, h3, h4, h5, h6 {
 /* Technical Expertise Carousel Fix */
 .skills-carousel {
     padding: 0; 
+    max-width: 100%;
 }
 .skills-carousel .owl-stage-outer {
-    overflow: hidden; /* Prevent side-cut cards and mobile overflow */
+    overflow: hidden !important; /* Prevent side-cut cards and mobile overflow */
+}
+.skills-carousel .owl-stage {
+    display: flex;
 }
 .skills-carousel .item {
     padding: 25px 12px; /* Vertical padding to prevent hover clipping, horizontal for spacing */
@@ -364,7 +374,8 @@ h1, h2, h3, h4, h5, h6 {
     bottom: -100px;
     right: 20px;
     z-index: 9999;
-    min-width: 300px;
+    min-width: 250px;
+    max-width: calc(100% - 40px);
     transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
@@ -402,11 +413,17 @@ footer {
         font-size: 3rem;
     }
     .navbar-brand {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
     .brand-accent {
-        font-size: 0.75rem;
+        font-size: 0.7rem;
         letter-spacing: 1px;
+    }
+    .section-padding {
+        padding: 80px 0;
+    }
+    .section-title {
+        font-size: 2rem;
     }
 }
 
