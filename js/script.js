@@ -43,16 +43,24 @@ $(document).ready(function() {
     // Initialize Skills Carousel
     $(".skills-carousel").owlCarousel({
         loop: true,
-        margin: 20,
+        margin: 0, // Using padding on .item in CSS for better control
         nav: false,
         dots: true,
         autoplay: true,
-        autoplayTimeout: 3000,
+        autoplayTimeout: 4000,
         autoplayHoverPause: true,
+        smartSpeed: 800,
         responsive: {
-            0: { items: 1 },
-            600: { items: 2 },
-            1000: { items: 4 }
+            0: { 
+                items: 1,
+                stagePadding: 0
+            },
+            768: { 
+                items: 2
+            },
+            1100: { 
+                items: 4
+            }
         }
     });
 

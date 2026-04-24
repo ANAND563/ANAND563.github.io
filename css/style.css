@@ -67,6 +67,25 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 800;
     color: var(--primary-color) !important;
     font-family: 'Outfit', sans-serif;
+    letter-spacing: 1px;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: baseline;
+}
+.brand-accent {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: var(--text-main);
+    margin-left: 8px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.9;
+}
+.navbar-brand:hover {
+    transform: scale(1.02);
+}
+.navbar-brand:hover .brand-accent {
+    color: var(--primary-color);
 }
 .nav-link {
     color: var(--text-main) !important;
@@ -251,13 +270,13 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Technical Expertise Carousel Fix */
 .skills-carousel {
-    padding: 30px 0; /* Space for hover transform */
+    padding: 0; 
 }
 .skills-carousel .owl-stage-outer {
-    overflow: visible !important; /* Allow overflow for hover effects */
+    overflow: hidden; /* Prevent side-cut cards and mobile overflow */
 }
 .skills-carousel .item {
-    padding: 10px; /* Internal spacing */
+    padding: 25px 12px; /* Vertical padding to prevent hover clipping, horizontal for spacing */
 }
 .skill-card:hover {
     transform: translateY(-15px);
@@ -381,5 +400,22 @@ footer {
 @media (max-width: 768px) {
     .hero-title {
         font-size: 3rem;
+    }
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+    .brand-accent {
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+    }
+}
+
+@media (max-width: 400px) {
+    .navbar-brand {
+        font-size: 1.3rem;
+    }
+    .brand-accent {
+        font-size: 0.65rem;
+        margin-left: 5px;
     }
 }
